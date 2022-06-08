@@ -1,0 +1,80 @@
+Installation on ubuntu
+
+Install Kubectl
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
+chmod +x ./kubectl
+
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+Install Docker
+
+sudo apt-get update && \
+    sudo apt-get install docker.io -y
+
+Install Minikube
+
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+Check Minicube Version
+
+Minikube version
+
+Install conntrack
+
+sudo apt install conntrack
+
+ sudo -i
+
+minikube start --vm-driver=none
+
+minikube status
+
+kubectl get nodes
+
+kubectl get pod
+
+kubectl get services
+
+Kubectl create deployment nginx-depl –image=nginx
+
+Kubectl get deployment
+
+Kubectl get pod
+
+Kubectl get replicaset
+
+Kubectl edit deployment nginx-depl (scroll down and make changes e.g change the version on nginx
+
+Kubectl get deployment (immediately shows 1/1)
+
+Kubectl get pod (immediately shows the old pod terminating and a new one being created
+
+
+Kubectl get replicaset (this will show the old and new one with old having no pod in it) 
+
+
+Kubectl logs [pod_name]
+
+Kubectl create deployment mongo-depl –image=mongo
+
+Kubectl describe [pod_name] (if pod creation process takes too long, you use this to know what is happening in the creation process
+
+Kubectl exec -it [pod_name] – bin/bash (goes into the terminal of the app container)
+
+Kubectl  get deployment
+
+Kubectl delete deployment [depolyment_name]
+
+Vim  nginx-deployment.yaml
+
+
+Kubectl apply -f nginx-deployment.yaml
+
+Kubectl get pod
+
+Kubectl get deployment
+
+Kubectl apply -f nginx-deployment.yaml (do this after updating the yaml file and k8s will automatically detect the changes and update the pod..
+
